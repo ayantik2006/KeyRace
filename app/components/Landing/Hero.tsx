@@ -1,5 +1,5 @@
 "use client";
-import { HandFist, Keyboard } from "lucide-react";
+import { ChevronsDown, HandFist, Keyboard } from "lucide-react";
 import { Anta } from "next/font/google";
 import { Varela_Round } from "next/font/google";
 import { motion } from "framer-motion";
@@ -30,10 +30,10 @@ const fadeUp: Variants = {
 
 function Hero() {
   return (
-    <div className="flex flex-col items-center gap-5 text-center ">
+    <div className="flex flex-col items-center gap- text-center ">
       <div className="flex flex-col items-center gap-10">
         <motion.h1
-          className={`font-bold text-5xl ${anta.className}`}
+          className={`font-bold text-5xl ${anta.className} [@media(max-width:862px)_and_(min-width:547px)]:text-3xl [@media(max-width:547px)]:text-2xl`}
           variants={fadeUp}
           initial="hidden"
           animate="show"
@@ -44,7 +44,7 @@ function Hero() {
           </span>{" "}
           Proven by Precision
         </motion.h1>
-        <h2 className="text-xl text-center text-neutral-300 leading-15">
+        <h2 className="text-xl text-center text-neutral-300 leading-15 mx-3">
           <p
             className={`[word-spacing:0.1rem] ${varela.className} text-white/70 tracking-wide`}
           >
@@ -59,7 +59,7 @@ function Hero() {
           </p>
         </h2>
       </div>
-      <div className={`flex gap-5 ${varela.className}`}>
+      <div className={`flex gap-5 ${varela.className} [@media(max-width:862px)_and_(min-width:547px)]:text-[0.9rem]`}>
         <button className="bg-[#FF6500] px-5 py-2 rounded-lg font-semibold hover:opacity-90 hover:-translate-y-1 duration-300 cursor-pointer flex items-center gap-2 group">
           <Keyboard
             size={18}
@@ -71,6 +71,10 @@ function Hero() {
           <HandFist size={18} className="group-hover:rotate-90 duration-300" />
           <p>Join Room</p>
         </button>
+      </div>
+      <div className="relative top-55 flex items-center gap-2 text-neutral-600">
+        <ChevronsDown className="animate-bounce mt-[0.3rem]"/>
+        <p>Scroll down</p>
       </div>
     </div>
   );
