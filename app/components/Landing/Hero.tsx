@@ -4,7 +4,11 @@ import { Anta } from "next/font/google";
 import { Varela_Round } from "next/font/google";
 import { motion } from "framer-motion";
 
-const anta = Anta({ weight: "400" });
+const anta = Anta({
+  weight: "400",
+  subsets: ["latin"],
+});
+
 const varela = Varela_Round({
   weight: "400",
   subsets: ["latin"],
