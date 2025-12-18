@@ -3,6 +3,7 @@ import { HandFist, Keyboard } from "lucide-react";
 import { Anta } from "next/font/google";
 import { Varela_Round } from "next/font/google";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 const anta = Anta({
   weight: "400",
@@ -14,7 +15,7 @@ const varela = Varela_Round({
   subsets: ["latin"],
 });
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
@@ -25,6 +26,7 @@ const fadeUp = {
     },
   },
 };
+
 
 function Hero() {
   return (
