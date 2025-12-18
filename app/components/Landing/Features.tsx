@@ -12,7 +12,7 @@ const varela = Varela_Round({
 function Features() {
   return (
     <div
-      className={`min-h-fit bg-[#151516] flex flex-col items-center ${varela.className}`}
+      className={`min-h-[60rem] bg-[#151516] flex flex-col gap-[4rem] items-center ${varela.className}`}
     >
       <div className="flex gap-5 items-center justify-between mt-30 w-full px-50">
         <motion.div
@@ -99,9 +99,9 @@ function Features() {
       <div className="flex gap-5 items-center justify-between mt-30 w-full px-50">
         <motion.div
           className="flex items-center gap-5"
-          initial={{ opacity: 0, x: -44 }}
+          initial={{ opacity: 0, x: -1 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "100px" }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
           <Target
