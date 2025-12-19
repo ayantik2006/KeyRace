@@ -9,11 +9,11 @@ const varela = Varela_Round({
 function FinalCta() {
   return (
     <div className="flex flex-col gap-10 items-center justify-center pt-20 pb-30 bg-[#151516]">
-      <h1 className={`text-[2rem] font-semibold ${varela.className}`}>
+      <h1 className={`text-[2rem] font-semibold ${varela.className} text-white`}>
         Ready to Race ?
       </h1>
       <div className="flex gap-3">
-        <button className="bg-[#FF6500] px-5 py-2 rounded-lg font-semibold hover:opacity-90 hover:-translate-y-1 duration-300 cursor-pointer flex items-center gap-2 group [@media(max-width:862px)]:px-3">
+        <button className="bg-[#FF6500] px-5 py-2 rounded-lg font-semibold hover:opacity-90 hover:-translate-y-1 duration-300 cursor-pointer flex items-center gap-2 group [@media(max-width:862px)]:px-3 text-white">
           <Keyboard
             size={18}
             className="rotate-180 group-hover:rotate-0 duration-300 [@media(max-width:862px)]:size-4"

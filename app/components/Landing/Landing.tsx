@@ -24,11 +24,12 @@ function Landing() {
         <Navbar />
         <Hero />
       </div>
-
-      <Features/>
-      <Working/>
-      <FinalCta/>
-      <Footer/>
+      <div className="bg-black">
+        <Features />
+      </div>
+      <Working />
+      <FinalCta />
+      <Footer />
     </div>
   );
 }
