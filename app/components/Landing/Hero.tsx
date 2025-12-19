@@ -33,7 +33,7 @@ function Hero() {
     <div className="flex flex-col items-center gap- text-center ">
       <div className="flex flex-col items-center gap-10">
         <motion.h1
-          className={`font-bold text-5xl ${anta.className} [@media(max-width:862px)_and_(min-width:547px)]:text-3xl [@media(max-width:547px)]:text-2xl mx-3`}
+          className={`font-bold text-5xl text-white ${anta.className} [@media(max-width:862px)_and_(min-width:547px)]:text-3xl [@media(max-width:547px)]:text-2xl mx-3`}
           variants={fadeUp}
           initial="hidden"
           animate="show"
@@ -59,7 +59,7 @@ function Hero() {
           </p>
         </h2>
       </div>
-      <div className={`flex gap-5 ${varela.className}`}>
+      <div className={`flex gap-5 ${varela.className} text-white`}>
         <button className="bg-[#FF6500] px-5 py-2 rounded-lg font-semibold hover:opacity-90 hover:-translate-y-1 duration-300 cursor-pointer flex items-center gap-2 group [@media(max-width:862px)]:px-3">
           <Keyboard
             size={18}

@@ -17,7 +17,7 @@ function Navbar() {
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <Link href="/" className="flex font-bold text-[1.3rem] font-extrabold">
-        <p className="">Key</p>
+        <p className="text-white">Key</p>
         <p className="text-[#FF6500]">Race</p>
       </Link>
       <div className={`flex gap-6 ${varela.className}`}>
