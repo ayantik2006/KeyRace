@@ -22,7 +22,7 @@ function FinalCta() {
             Start Typing
           </p>
         </button>
-        <button className="bg-neutral-800 px-5 py-2 rounded-lg font-semibold hover:opacity-90 hover:-translate-y-1 duration-300 cursor-pointer border border-neutral-700 flex items-center gap-2 group [@media(max-width:862px)]:px-3">
+        <button className="bg-neutral-800 px-5 py-2 rounded-lg font-semibold hover:opacity-90 hover:-translate-y-1 duration-300 cursor-pointer border border-neutral-700 flex items-center gap-2 group [@media(max-width:862px)]:px-3 text-white">
           <ChevronUp
             size={18}
             className="group-hover:rotate-90 duration-300 [@media(max-width:862px)]:size-4"

@@ -12,7 +12,7 @@ const varela = Varela_Round({
 function Features() {
   return (
     <div
-      className={`min-h-[70rem] w-full bg-[#151516] flex flex-col gap-[4rem] justify-center items-center ${varela.className} rounded-t-full border-t border-neutral-500 mt-5`}
+      className={`min-h-[70rem] w-full bg-[#151516] flex flex-col gap-[4rem] justify-center items-center ${varela.className} rounded-t-full border-t border-neutral-500`}
     >
       <div className="">
         <div className="flex flex-col gap-5 items-start px- justify-center mt-30 mx-10">
