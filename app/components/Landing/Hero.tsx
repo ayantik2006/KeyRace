@@ -74,7 +74,6 @@ function Hero() {
       </div>
       <div className="relative top-55 flex items-center gap-2 text-neutral-600">
         <ChevronsDown className="animate-bounce mt-[0.3rem]"/>
-        <p>Scroll down</p>
       </div>
     </div>
   );

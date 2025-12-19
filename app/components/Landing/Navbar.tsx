@@ -11,7 +11,7 @@ const varela = Varela_Round({
 function Navbar() {
   return (
     <motion.div
-      className="fixed top-0 flex justify-between items-center w-full py-5 px-8 bg-[#171717] border-b-1 border-b-neutral-800 z-50"
+      className="fixed top-0 flex justify-between items-center w-full py-5 px-8 bg-transparent backdrop-blur-[1rem] z-50"
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}

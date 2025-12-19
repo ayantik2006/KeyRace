@@ -1,11 +1,14 @@
 import Features from "./Features";
+import FinalCta from "./FinalCta";
+import Footer from "./Footer";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
+import Working from "./Working";
 
 function Landing() {
   return (
     <div>
-      <div className="min-h-screen flex flex-col items-center justify-center bg-neutral-900 bg-[url('/grid.svg')]">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-neutral-800 bg-[url('/grid.svg')]">
         <div
           className="absolute inset-0 pointer-events-none
   bg-[radial-gradient(ellipse_at_center,rgba(20,20,21,0)_0%,rgba(20,20,21,0.6)_65%,rgba(20,20,21,0.9)_100%)]
@@ -23,6 +26,9 @@ function Landing() {
       </div>
 
       <Features/>
+      <Working/>
+      <FinalCta/>
+      <Footer/>
     </div>
   );
 }
