@@ -25,13 +25,7 @@ function Navbar() {
           href=""
           className="text-neutral-400 hover:text-white duration-300 text-[0.9rem]"
         >
-          Features
-        </Link>
-        <Link
-          href=""
-          className="text-neutral-400 hover:text-white duration-300 text-[0.9rem]"
-        >
-          Compete
+          Join Room
         </Link>
         <Link
           href=""
