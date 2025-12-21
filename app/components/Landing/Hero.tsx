@@ -4,6 +4,7 @@ import { Anta } from "next/font/google";
 import { Varela_Round } from "next/font/google";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import Link from "next/link";
 
 const anta = Anta({
   weight: "400",
@@ -60,13 +61,13 @@ function Hero() {
         </h2>
       </div>
       <div className={`flex gap-5 ${varela.className} text-white`}>
-        <button className="bg-[#FF6500] px-5 py-2 rounded-lg font-semibold hover:opacity-90 hover:-translate-y-1 duration-300 cursor-pointer flex items-center gap-2 group [@media(max-width:862px)]:px-3">
+        <Link href="/type" className="bg-[#FF6500] px-5 py-2 rounded-lg font-semibold hover:opacity-90 hover:-translate-y-1 duration-300 cursor-pointer flex items-center gap-2 group [@media(max-width:862px)]:px-3">
           <Keyboard
             size={18}
             className="rotate-180 group-hover:rotate-0 duration-300 [@media(max-width:862px)]:size-4"
           />
           <p className="[@media(max-width:862px)]:text-[0.9rem]">Start Typing</p>
-        </button>
+        </Link>
         <button className="bg-neutral-800 px-5 py-2 rounded-lg font-semibold hover:opacity-90 hover:-translate-y-1 duration-300 cursor-pointer border border-neutral-700 flex items-center gap-2 group [@media(max-width:862px)]:px-3">
           <ChevronUp size={18} className="group-hover:rotate-90 duration-300 [@media(max-width:862px)]:size-4" />
           <p>Create Room</p>
