@@ -28,10 +28,9 @@ function RandomWord() {
 
   useEffect(() => {
     setCaretPos(-1);
-    setWordsNumber(Number(localStorage.getItem("wordsNumber")) || 30);
     axios
       .get("/api/words", {
-        params: { wordsNumber: Number(localStorage.getItem("wordsNumber")) },
+        params: { wordsNumber: wordsNumber },
       })
       .then((res) => {
         setWords(res.data.words);
@@ -70,10 +69,9 @@ function RandomWord() {
         <Input
           type="number"
           className="no-spinner text-neutral-400"
-          defaultValue={Number(localStorage.getItem("wordsNumber"))}
+          defaultValue={wordsNumber}
           onChange={(e) => {
             setWordsNumber(Number(e.currentTarget.value));
-            localStorage.setItem("wordsNumber", e.currentTarget.value);
           }}
         />
       </div>}
