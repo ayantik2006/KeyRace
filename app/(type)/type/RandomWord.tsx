@@ -29,6 +29,9 @@ function RandomWord() {
 
   useEffect(() => {
     setCaretPos(-1);
+    setStartTime(0);
+    setTimeTaken(0);
+    setWrongCharsNum(0);
     axios
       .get("/api/words", {
         params: { wordsNumber: wordsNumber },
