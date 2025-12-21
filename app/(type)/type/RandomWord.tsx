@@ -26,8 +26,10 @@ function RandomWord() {
   const [startTime, setStartTime] = useState(0);
   const [timeTaken, setTimeTaken] = useState(0);
   const [wrongCharsNum, setWrongCharsNum] = useState(0);
+  const wordsBoxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    wordsBoxRef.current?.focus();
     setCaretPos(-1);
     setStartTime(0);
     setTimeTaken(0);
@@ -85,6 +87,7 @@ function RandomWord() {
       {timeTaken == 0 && (
         <div
           className={`text-3xl text-[#f3af817a] w-full max-w-6l h-[15rem] overflow-auto leading-[3rem] words-scrollbar ${robotoMono.className} outline-none cursor-default select-none caret-transparen bg-neutral-800 px-10 py-5 rounded-lg`}
+          ref={wordsBoxRef}
           onClick={() => {
             hiddenInputRef.current?.focus();
           }}
@@ -161,10 +164,17 @@ function RandomWord() {
         </div>
       )}
 
+      {timeTaken==0 && <div className="text-neutral-500">
+        Click on the text to start
+      </div>}
+
       {timeTaken !== 0 && (
         <div
-          className={`text-white flex flex-wrap gap-5 ${robotoMono.className}`}
+          className={`text-white flex flex-col flex-wrap gap-5 items-center ${robotoMono.className}`}
         >
+          <div className="items-center">
+            Number of Words: {words.split(" ").length}
+          </div>
           <div className="flex flex-col items-center gap-2 p-10 bg-[#68625e] rounded-lg shadow-[5px_5px_0_2px_black]">
             <h1 className="text-5xl">WPM</h1>
             <h2 className="text-3xl text-[#ffbc90]">
