@@ -49,7 +49,10 @@ function RandomWord() {
 
   useEffect(() => {
     charsRef.current.map((char, index) => {
+      const containerRect = wordsBoxRef.current!.getBoundingClientRect();
       const rect = char.getBoundingClientRect();
+      const left = rect.left - containerRect.left;
+      const top = rect.top - containerRect.top;
       const temp = [rect.left, rect.top];
       const tempCharPos = charsPos;
       tempCharPos.push(temp);
@@ -66,7 +69,7 @@ function RandomWord() {
       className="flex flex-col items-center gap-10 w-full px-10"
       ref={containerRef}
     >
-      {timeTaken == 0 && (
+      {/* {timeTaken == 0 && (
         <div className="bg-[#4d4b4b] p-5 mt-[-6rem] rounded-lg w-fit flex flex-col gap-2 shadow-[5px_5px_0_4px]">
           <label
             className={`font-semibold text-neutral-300 ${robotoMono.className}`}
@@ -82,11 +85,15 @@ function RandomWord() {
             }}
           />
         </div>
+      )} */}
+
+      {timeTaken == 0 && (
+        <div className="text-neutral-500">Click on the text to start</div>
       )}
 
       {timeTaken == 0 && (
         <div
-          className={`text-3xl text-[#f3af817a] w-full max-w-6l h-[15rem] overflow-auto leading-[3rem] words-scrollbar ${robotoMono.className} outline-none cursor-default select-none caret-transparen bg-neutral-800 px-10 py-5 rounded-lg`}
+          className={`text-3xl text-[#f3af817a] w-full max-w-6l h-fit overflow-auto leading-[3rem] words-scrollbar ${robotoMono.className} outline-none cursor-default select-none caret-transparen bg-neutral-800 px-10 py-5 rounded-lg`}
           ref={wordsBoxRef}
           onClick={() => {
             hiddenInputRef.current?.focus();
@@ -99,9 +106,12 @@ function RandomWord() {
             onKeyDown={(e) => {
               if (e.key === "Backspace") {
                 if (caretPos !== -1) setCaretPos((p) => p - 1);
-                const isWrongCpy = isWrong;
-                isWrongCpy[caretPos] = false;
-                setIsWrong(isWrongCpy);
+                setIsWrong((prev) => {
+                  const copy = [...prev];
+                  copy[caretPos] = false;
+                  return copy;
+                });
+
                 if (caretPos == 0) {
                   setCaretLeft(charsPos[1][0] - 15);
                   setCaretTop(charsPos[1][1]);
@@ -163,10 +173,6 @@ function RandomWord() {
         </div>
       )}
 
-      {timeTaken==0 && <div className="text-neutral-500">
-        Click on the text to start
-      </div>}
-
       {timeTaken !== 0 && (
         <div
           className={`text-white flex flex-col flex-wrap gap-5 items-center ${robotoMono.className}`}
@@ -183,7 +189,10 @@ function RandomWord() {
           <div className="flex flex-col items-center gap-2 p-10 bg-[#68625e] rounded-lg shadow-[5px_5px_0_2px_black]">
             <h1 className="text-5xl">Accuracy</h1>
             <h2 className="text-3xl text-[#ffbc90]">
-              {Math.round(((words.length-wrongCharsNum)/(words.length))*100)} %
+              {Math.round(
+                ((words.length - wrongCharsNum) / words.length) * 100
+              )}{" "}
+              %
             </h2>
           </div>
         </div>

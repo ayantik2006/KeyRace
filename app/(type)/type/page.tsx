@@ -1,20 +1,13 @@
 import Navbar from "@/app/components/Landing/Navbar";
 import RandomWord from "./RandomWord";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 function page() {
   return (
-    <div className="bg-[#1F1F1F] h-screen flex flex-col items-center justify-center gap-20">
+    <div className="bg-[#1F1F1F] min-h-screen h-fit flex flex-col items-center justify-center gap-20 overflow-auto">
       <Navbar />
-      <RandomWord />
+      <div className="h-fit">
+        <RandomWord />
+      </div>
     </div>
   );
 }
