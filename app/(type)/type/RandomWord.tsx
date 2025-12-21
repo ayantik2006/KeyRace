@@ -100,7 +100,6 @@ function RandomWord() {
               if (e.key === "Backspace") {
                 if (caretPos !== -1) setCaretPos((p) => p - 1);
                 const isWrongCpy = isWrong;
-                if (isWrongCpy[caretPos] == true) setWrongCharsNum((w) => --w);
                 isWrongCpy[caretPos] = false;
                 setIsWrong(isWrongCpy);
                 if (caretPos == 0) {
